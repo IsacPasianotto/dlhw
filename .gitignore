@@ -162,3 +162,23 @@ cython_debug/
 ### virtualenv:
 
 dlhwenv/
+
+#### LaTeX:
+
+*.fls
+*.lof
+*.lot
+*.out
+*.toc
+*.dvi
+*.log
+*.aux
+*.blg
+*.synctex.gz
+
+
+### Auxiliary dir created by pycharm
+
+out/
+out/*
+out/**
