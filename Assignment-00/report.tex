@@ -24,22 +24,15 @@
     %\tableofcontents
 
     \section{Requirements}\label{sec:requirements}
-
-    The aim this assignment is to (try to) reproduce the experiment reported in \textit{"Figure 1."}
-    of the paper \cite{Rumelhart1986LearningRB}.
-
-    That consist in implementing a small neural network to solve the following classification task:
-    given a 6-bit long binary number as input, determine if this is palindromic number or not.
+    This assignment aims to (try to) reproduce the experiment reported in \textit{"Figure 1."} of the paper \cite{Rumelhart1986LearningRB}.
+    \noindent That consists of implementing a small neural network to solve the following classification task: given a 6-bit long binary number as input, determine if it is a palindromic number or not.
 
     \section{Network definition}\label{sec:network-definition}
 
-    The network described in the paper was composed by a neuron in the input layer for each digit of
-    the number (i.e. six neurons in total), two neurons in the unique hidden layer and just one neuron
-    in the output layer.
+    The network described in the paper was composed of a neuron in the input layer for each digit of the number (i.e., six neurons in total),
+    two neurons in the unique hidden layer, and just one neuron  in the output layer.
 
-    \noindent The authors provided also a figure (reported in ~\ref{fig:1.A}) of the network, which we can
-    redraw with a more conventional representation as ~\ref{fig:1.B}.
-
+    \noindent The authors provided also a figure (reported in ~\ref{fig:1.A}) of the network, which we can redraw with a more conventional representation as ~\ref{fig:1.B}.
 
     \begin{figure}
         \centering
@@ -59,7 +52,6 @@
         \label{fig:1}
     \end{figure}
 
-
     Moreover, the authors provided the following additional information about the network:
 
     \begin{itemize}
@@ -67,37 +59,37 @@
         \item The initial weights of the network were randomly chosen from a uniform distribution in the range $[-0.3,\ 0.3]$.
         \item They use the whole dataset (64 combinations of 6-bit binary numbers) to train the network.
         \item The used loss function was $E = \frac{1}{2}\sum_{c}\sum_{j}{\left(y_{i,c} - d_{i,c}\right)^2}$.
-        \item The learning rate was set to $\varepsilon = 0.1$ and the number of epochs the train lasted was 1,425.
+        \item The learning rate was set to $\varepsilon = 0.1$, and the number of epochs the train lasted was 1,425.
     \end{itemize}
 
     \noindent What is missing in the paper is:
 
     \begin{itemize}
-        \itemsep0em % Reduce space between items
-        \item The activation function used in the hidden and output layers.
-            I assumed that the authors used the sigmoid function,since it was the only one mentioned in the paper.
-        \item The initializations of the bias terms.
-            I assumed that they were initialized with zero.
+        \item \itemsep0em % Reduce space between items
+        \item The activation function the authors used in the hidden and output layers.
+        Based on the information provided in the paper, the authors might have used the sigmoid function, as it was the only one mentioned.
+        The initializations of the bias terms.
+        In this solution, they were all initialized to zero
     \end{itemize}
+
+
 
     \section{Results}\label{sec:results}
 
-    Performing the experiment, trying to still as close as possible to the original formulation didn't lead
-    to a very promising result, as shown in the figure ~\ref{fig:2}.
+   Performing the experiment, trying to still as close as possible to the original formulation did not lead  to an auspicious result, as shown in the figure ~\ref{fig:2}.
 
-    \noindent I blame the unbalanced dataset for the unsatisfactory results, since the number of palindromic numbers is much smaller
-    of the non-palindromic ones.
-    In fact even if the accuracy seems to be good, this is due to the fact that the network
-    ended up into being a dummy classifier, always predicting the most frequent class.
+    \noindent I blame the unbalanced dataset for the unsatisfactory results since the number of palindromic numbers is much smaller of the non-palindromic ones.
+    Even if the accuracy seems to be good, this is because the network ended up being a dummy classifier, always predicting the most frequent class.
+
 
     \noindent Considering a balanced dataset (repeating the palindromic numbers more than once to match the number of non-palindromic numbers)
     lead to a much better result, as shown in the figure ~\ref{fig:3}.
 
     \section{Variations on the original experiment}\label{sec:variations}
 
-    Since we were encouraged to try different variations of the experiment, I tried to train the network in several ways, which can be summarized in the table ~\ref{tab:1}.
-    % Force the table to be placed in a new page
-    \newpage
+    Since we were encouraged to try different experiment variations, I tried to train the network in several ways, summarized in the table ~\ref{tab:1}.
+
+    \newpage % otherwise the table will be placed in a wrong spot
     \begin{table}
         \footnotesize
         \centering
