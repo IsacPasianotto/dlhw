@@ -11,7 +11,7 @@
 \usepackage{biblatex}
 \addbibresource{references.bib}
 
-\title{Assignment \#1 report}
+\title{First Assignment Report}
 
 \author{\textbf{Student:} Isac Pasianotto}
 \date{2024-05}
@@ -67,10 +67,10 @@
         \item The initial weights of the network were randomly chosen from a uniform distribution in the range $[-0.3,\ 0.3]$.
         \item They use the whole dataset (64 combinations of 6-bit binary numbers) to train the network.
         \item The used loss function was $E = \frac{1}{2}\sum_{c}\sum_{j}{\left(y_{i,c} - d_{i,c}\right)^2}$.
-        \item The learning rate was set to $\eta = 0.1$ and the number of epochs the train lasted was 1,425.
+        \item The learning rate was set to $\varepsilon = 0.1$ and the number of epochs the train lasted was 1,425.
     \end{itemize}
 
-    What is missing in the paper is:
+    \noindent What is missing in the paper is:
 
     \begin{itemize}
         \itemsep0em % Reduce space between items
@@ -93,8 +93,11 @@
     \noindent Considering a balanced dataset (repeating the palindromic numbers more than once to match the number of non-palindromic numbers)
     lead to a much better result, as shown in the figure ~\ref{fig:3}.
 
-    Since we were encouraged to try different variations of the experiment, I tried to train the network in several ways, which can be summarized in the table ~\ref{tab:1}.
+    \section{Variations on the original experiment}\label{sec:variations}
 
+    Since we were encouraged to try different variations of the experiment, I tried to train the network in several ways, which can be summarized in the table ~\ref{tab:1}.
+    % Force the table to be placed in a new page
+    \newpage
     \begin{table}
         \footnotesize
         \centering
@@ -115,9 +118,6 @@
         \caption{Summary of the experiments.}
         \label{tab:1}
     \end{table}
-
-    \newpage
-    \section{Variations on the original experiment}\label{sec:variations}
 
     \begin{figure}
         \centering
@@ -175,8 +175,6 @@
         \label{fig:9}
     \end{figure}
 
-    \newpage
-    \medskip
     \printbibliography
 
 \end{document}
